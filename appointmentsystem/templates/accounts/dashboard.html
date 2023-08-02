@@ -1,0 +1,209 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="{% static 'image/x-icon' %}" href="{% static 'images/favicon.ico' %}">
+</head>
+<body>
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{% static 'images/logo/loder.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <!--? slider Area Start-->
+        <div class="slider-area position-relative fix"
+            style="background-image: url('static/images/gallery/barberian_cover1.png'); background-size: cover; background-position: center;">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 pt-70 text-center">
+                                <span data-animation="fadeInUp" data-delay="0.2s" style="color: white;">It's a good day to</span>
+                                <h1 data-animation="fadeInUp" data-delay="0.5s" style="color: white;">KEEP IT HANDSOME.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Arrow -->
+            <div class="thumb-content-box">
+                <div class="thumb-content">
+                    <h3>make an appointment now</h3>
+                    <a class="btn btn-sm" href="{% url 'booking' %}">click here</a>
+                </div>
+            </div>
+        </div>
+        <!-- slider Area End-->
+        <!--? About Area Start -->
+        <section class="about-area section-padding30 position-relative">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-11">
+                        <!-- about-img -->
+                        <div class="about-img ">
+                            <img src="{% static 'images/gallery/about1.png' %}"  alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="about-caption">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle section-tittle3 mb-35">
+                                <span>About Our company</span>
+                                <h2>The Classic Barbershop Experience.</h2>
+                            </div>
+                            <p class="mb-30 pera-bottom">"The Barberian is a must-visit any man who values more than just a smooth shave and a fresh haircut. With a comfortable
+                            reception area with couches and seats and a bar for them to order drinks, its a great place to unwind while waiting
+                            their turn for their haircut. Its a retreat from their day-to-day activities, where they can slow down, browse through
+                            a selection of magazines, watch whatever is showing on the TV, or simply enjoy conversing with other members of the
+                            neighborhood." - Hoppler Editorial Board</p>
+                            <p class="pera-top mb-50">Offering a memorable barbershop experience, while throwing in a few surprises along the way, The Barberian has become
+                            a must-try for men who live in the laid-back south of the Metro.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About Shape -->
+            <div class="about-shape">
+                <img src="{% static 'images/gallery/about-shape.png' %}" alt="">
+            </div>
+        </section>
+        <!-- About-2 Area End -->
+        <!--? Services Area Start -->
+        <section class="service-area pb-170">
+            <div class="container">
+                <!-- Section Tittle -->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-xl-7 col-lg-8 col-md-11 col-sm-11">
+                        <div class="section-tittle text-center mb-90">
+                            <span>Professional Services</span>
+                            <h2>Our Best services that we offering to you</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section caption -->
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="services-caption text-center mb-30">
+                            <div class="service-cap">
+                                <h4>CUT</h4>
+                                <p>Haircut + Hot Towel + Wash + Long Massage + Complimentary Drinks</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="services-caption active text-center mb-30">
+                            <div class="service-cap">
+                                <h4>CUT + BEARD TRIM</h4>
+                                <p>Haircut + Beard trim + Hot Towel + Wash + Long Massage + Complimentary Drinks</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="services-caption text-center mb-30">
+                            <div class="service-cap">
+                                <h4>CUT + SHAVE</h4>
+                                <p>Haircut + Traditional Shave + Hot Towel + Wash + Long Massage + Complimentary Drinks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Area End -->
+        <!-- Best Pricing Area Start -->
+        <div class="best-pricing section-padding2 position-relative">
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col-xl-7 col-lg-7">
+                        <div class="section-tittle mb-50">
+                            <span>Our Best Pricing</span>
+                            <h2>We provide best Complimentary drinks <br> in the city!</h2>
+                            <span>It's on the house when you book with us!</span>
+                        </div>
+                        <!-- Pricing  -->
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="pricing-list">
+                                    <ul>
+                                        <li>Nespresso</li>
+                                        <li>Green Tea</li>
+                                        <li>Chocolate Drink</li>
+                                        <li>House Bourbon</li>
+                                        <li>House Scotch</li>
+                                        <li>House Iced Tea</li>
+                                        <li>Local Beer</li>
+                                        <li>Soda</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- pricing img -->
+            <div class="pricing-img">
+                <img class="pricing-img1" src="{% static 'images/gallery/gallery3barberian.png' %}" alt="">
+                <img class="pricing-img2" src="{% static 'images/gallery/gallery4barberian.png' %}" alt="">
+            </div>
+        </div>
+        <!-- Best Pricing Area End -->
+    </main>
+    <div id="back-top">
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+    
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/animated.headline.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    
+    <!-- Date Picker -->
+    <script src="{% static 'js/gijgo.min.js' %}"></script>
+    <!-- Nice-select, sticky -->
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="{% static 'js/query.counterup.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/hover-direction-snake.min.js' %}"></script>
+    
+    <!-- contact js -->
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="{% static 'js/jquery.form.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/mail-script.js' %}"></script>
+    <script src="{% static 'js/query.ajaxchimp.min.js' %}"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    </body>
+
+
+{% endblock %}
+

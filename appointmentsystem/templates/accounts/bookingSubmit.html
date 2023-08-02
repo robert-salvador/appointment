@@ -1,0 +1,47 @@
+<title>Booking Submit</title>
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+{% if messages %}
+<div class="alert alert-info">
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<h1 class="text-center fPersian mt-3">Online Booking</h1>
+
+<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black text-center m-5">
+    <form method="post" action="{% url 'bookingSubmit' %}" class="me-2 ms-2" required>
+        {% csrf_token %}
+
+        <!--input time-->
+        <h3 class="text-center fPersian mt-4">Time:</h3>
+        <div>
+            <select class="form-select fs-3 text-center" name="time">
+                {% for time in times %}
+                <option value="{{time}}">{{time}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+        <h2>Do you want to add other drinks?</h2>
+        <h3 class="">Select Additional Drinks:</h3>
+        {% for drink in add_drinks %}
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="additional_drinks" value="{{ drink.id }}"
+                id="drink_{{ drink.id }}">
+            <label class="form-check-label fs-3" for="drink_{{ drink.id }}">{{ drink.name }} - PHP {{ drink.price }}</label>
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary text-white mt-3 fPersian">Submit</button>
+
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+<title>Online Booking</title>
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+
+{% if messages %}
+<div class="alert alert-info">
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<h1 class="text-center  mt-3">Online Booking</h1>
+
+<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
+    <form method="post" action="{% url 'booking' %}" class="me-2 ms-2" required>
+        {% csrf_token %}
+    
+        <!--input service-->
+        <div>
+            <h3 class="">Select Service:</h3>
+            <select class="form-select fs-3" name="service">
+                {% for service in services %}
+                <option value="{{ service.id }}">{{ service.name }} - PHP {{ service.price }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <h3 class="">Select Complementary Drink:</h3>
+            <select class="form-select fs-3" name="complementary_drink">
+                <option value="">Complementary Drink</option>
+                {% for drink in complementary_drinks %}
+                <option value="{{ drink.id }}">{{ drink.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <h3 class="">Select Barber:</h3>
+            <select class="form-select fs-3" name="picked_barber">
+                <option value="">Barber</option>
+                {% for barber in picked_barber %}
+                <option value="{{ barber.id }}">{{ barber.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!--input day-->
+        <div class="mt-3">
+            <h3 class="">Select Day:</h3>
+            <select class="form-select fs-3" name="day">
+                {% for validateWeekday in validateWeekdays %}
+                <option value="{{ validateWeekday }}">{{ validateWeekday }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    
+        <br />
+        <button type="submit" class="btn btn-primary text-white">Continue</button>
+    </form>
+</div>
+
+
+
+
+{% endblock %}
