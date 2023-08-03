@@ -144,5 +144,7 @@ EMAIL_HOST_PASSWORD = 'uvan xcll npnp ecld'
 # Render PostGreSQL database (Live)
 import dj_database_url
 DATABASES = {
-    'default' : dj_database_url.parse('postgres://appointmentdatabase_user:AlFrrh98OaD6JcgFkfGkQVBJzChPlcNA@dpg-cj57l8geba7s73e6a57g-a.singapore-postgres.render.com/appointmentdatabase')
+    
+    "default":dj_database_url.parse('postgres://appointmentdatabase_user:AlFrrh98OaD6JcgFkfGkQVBJzChPlcNA@dpg-cj57l8geba7s73e6a57g-a.singapore-postgres.render.com/appointmentdatabase')
+
 }
