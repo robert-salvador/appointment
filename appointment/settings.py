@@ -30,6 +30,7 @@ SECRET_KEY = "django-insecure-af$*lqoh-h3m_-fi*%y-(9y5kqc3y+(4v%62gn2ocpjw8ik_k8
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     'appointmentsystem',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -116,8 +118,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
-
 MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
@@ -143,7 +143,26 @@ EMAIL_HOST_PASSWORD = 'uvan xcll npnp ecld'
 # Render PostGreSQL database (Live)
 import dj_database_url
 DATABASES = {
-    
+
     "default":dj_database_url.parse('postgres://appointmentdatabase_user:AlFrrh98OaD6JcgFkfGkQVBJzChPlcNA@dpg-cj57l8geba7s73e6a57g-a.singapore-postgres.render.com/appointmentdatabase')
 
 }
+
+AWS_ACCESS_KEY_ID = "AKIAXGMPSKXHCYNGC6NP"
+
+AWS_SECRET_ACCESS_KEY = "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"
+
+AWS_STORAGE_BUCKET_NAME = "mybucket-ph-23"
+
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
