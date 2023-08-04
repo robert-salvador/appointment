@@ -29,7 +29,7 @@ environ.Env.read_env()
 SECRET_KEY = "django-insecure-af$*lqoh-h3m_-fi*%y-(9y5kqc3y+(4v%62gn2ocpjw8ik_k8"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -136,8 +136,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'roberthegodd@gmail.com'
-EMAIL_HOST_PASSWORD = 'uvan xcll npnp ecld'
+EMAIL_HOST_USER = 'barberian.appointment@gmail.com'
+EMAIL_HOST_PASSWORD = 'xmcr fsin uebw kjtm'
 
 
 # Render PostGreSQL database (Live)
