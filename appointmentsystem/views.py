@@ -174,7 +174,7 @@ def bookingSubmit(request):
                                     message += f'\n- {additional_drink.name} - PHP {additional_drink.price}'
                                 message += '\n\nThank you for booking with us!'
                                 from_email = settings.DEFAULT_FROM_EMAIL
-                                recipient_list = [user.email, settings.DEFAULT_FROM_EMAIL]
+                                recipient_list = [user.email]
 
                                 try:
                                     send_mail(subject, message, from_email, recipient_list)
